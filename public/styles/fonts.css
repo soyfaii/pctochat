@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Press Start 2P";
-  src: url("./resources/fonts/PressStart2P-Regular.ttf") format("truetype");
+  src: url("../resources/fonts/PressStart2P-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "battlenet";
-  src: url("./resources/fonts/battlenet-Medium.ttf") format("truetype");
+  src: url("../resources/fonts/battlenet-Medium.ttf") format("truetype");
 }
