@@ -1,0 +1,8 @@
+@keyframes message-appear {
+  0% {
+    transform: translateY(calc(100% + 5px));
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

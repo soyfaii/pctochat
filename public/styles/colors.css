@@ -1,0 +1,14 @@
+:root {
+  --page-bg-color: #ffffff;
+  --bg-color: #f2f2f2;
+  --light-border-color: #d9d9d9;
+  --dark-border-color: #bfbfbf;
+  --default-blue: #2db9ec;
+  --light-default-blue: #d0effb;
+  --selected-light-default-blue: #a6e1f9;
+  --dark-default-blue: #08475e;
+
+  @media (prefers-color-scheme: dark) {
+    --page-bg-color: #121212;
+  }
+}

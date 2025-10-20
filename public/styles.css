@@ -1,0 +1,193 @@
+@import url("./styles/animations.css");
+@import url("./styles/fonts.css");
+@import url("./styles/colors.css");
+
+* {
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  background-color: var(--page-bg-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: var(--bg-color);
+  border: 1px solid var(--light-border-color);
+  width: 100vw;
+  height: 100vh;
+  max-width: 258px;
+  max-height: 400px;
+  padding: 0 5px 5px 5px;
+  margin: 8px;
+}
+
+.login.container {
+  flex-direction: column;
+  height: initial;
+  max-height: initial;
+  padding: 5px;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#chat-log {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  overflow-y: auto;
+  flex: 1;
+  align-items: end;
+  padding: 5px 0;
+}
+
+button,
+input[type="text"] {
+  height: 25px;
+  min-width: 25px;
+  border-radius: 0px;
+  border: 1px solid var(--dark-border-color);
+  background-color: white;
+  color: black;
+}
+
+input {
+  padding: 0 10px;
+  font-family: "battlenet", monospace;
+  font-size: 16px;
+}
+
+form > button {
+  align-self: end;
+  padding: 0 15px;
+}
+
+button:active {
+  background-color: var(--bg-color);
+}
+
+button.active-tool {
+  background-color: var(--light-default-blue);
+  border: 1px solid var(--default-blue);
+}
+
+button.active-tool:active {
+  background-color: var(--selected-light-default-blue);
+}
+
+#user-message-form {
+  display: flex;
+  gap: 5px;
+}
+
+#user-message-form > div:nth-child(2) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  image-rendering: pixelated;
+}
+
+#toolbar button {
+  padding: 0;
+  width: 25px;
+  height: 25px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--light-border-color);
+  margin: 0;
+}
+
+.system-message-box {
+  width: 216px;
+  height: 20px;
+  background-color: black;
+  color: yellow;
+  border: 1px solid var(--dark-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 8px;
+  font-size: 12px;
+  font-family: "battlenet", monospace;
+}
+
+.message-box {
+  width: 216px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid var(--default-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-log .message-box {
+  animation: message-appear 0.1s linear;
+}
+
+.message-header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 20px;
+  background-color: var(--light-default-blue);
+  border-bottom: 1px solid var(--default-blue);
+  color: var(--dark-default-blue);
+  padding: 6px 8px;
+}
+
+.canvas {
+  width: 214px;
+  height: 79px;
+  image-rendering: pixelated;
+  position: relative;
+}
+
+.message-text {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  color: black;
+  font-family: "battlenet", monospace;
+  user-select: none;
+  pointer-events: none;
+}
+
+#form-button-row {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+#form-button-row > button {
+  flex: 1;
+}

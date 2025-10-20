@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pctochat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="user-message-form">
+            <div>
+                <div id="toolbar">
+                    <button class="active-tool" id="pencil">
+                        <img src="resources/icons/pencil_icon.png" alt="pencil">
+                    </button>
+                    <button id="eraser">
+                        <img src="resources/icons/eraser_icon.png" alt="pencil">
+                    </button>
+                    <hr>
+                    <button id="small">
+                        <img src="resources/icons/small_icon.png" alt="small">
+                    </button>
+                    <button class="active-tool" id="medium">
+                        <img src="resources/icons/medium_icon.png" alt="medium">
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="message-box" id="user-message-box">
+                    <div class="message-header">
+                        <span class="username">Player</span>
+                    </div>
+                    <div class="canvas">
+                        <span class="message-text"></span>
+                        <canvas width="214" height="78"></canvas>
+                    </div>
+                </div>
+                <div id="form-button-row">
+                    <button id="clear">clear</button>
+                    <button id="copy">copy</button>
+                    <button id="send">send</button>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-bottom: 5px;">
+        <div id="chat-log">
+            <!-- Messages will appear here -->
+            <div class="system-message-box">
+                Welcome to pctochat!
+            </div>
+        </div>
+    </div>
+
+    <script src="js/canvas.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/text.js"></script>
+</body>
+
+</html>
