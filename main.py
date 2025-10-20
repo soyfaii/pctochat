@@ -62,6 +62,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="run pctochat web server")
     parser.add_argument("--port", "-p", type=int, help="port to listen on (default: %(default)s)", default=PORT)
+    parser.add_argument("--server", "-s", action="store_true", help="run server in headless mode without opening a browser")
     args = parser.parse_args()
 
     port = args.port or PORT
@@ -83,5 +84,11 @@ if __name__ == "__main__":
     if not (1 <= port <= 65535):
         print(f"Error: port {port} is out of range (1-65535)")
         sys.exit(2)
+    
+    open_browser = not args.server
+
+    if open_browser:
+        import webbrowser
+        webbrowser.open(f"http://{local_ip}:{port}")
 
     serve(app, host="0.0.0.0", port=port)

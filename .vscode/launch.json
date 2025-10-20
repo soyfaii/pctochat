@@ -1,10 +1,18 @@
 {
   "configurations": [
     {
-      "name": "Python Debugger",
+      "name": "Python: Run",
       "type": "debugpy",
       "request": "launch",
       "program": "main.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: Run Headless",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "main.py",
+      "args": ["--server"],
       "console": "integratedTerminal"
     }
   ]
