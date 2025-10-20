@@ -41,6 +41,17 @@ body {
 
 h1 {
   font-size: 16px;
+  margin-bottom: 5px;
+  align-self: center;
+}
+
+#join-info {
+  font-family: "battlenet", monospace;
+  font-size: 16px;
+  margin-bottom: 10px;
+  align-self: center;
+  display: block;
+  text-align: center;
 }
 
 form {

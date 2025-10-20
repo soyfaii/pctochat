@@ -3,9 +3,21 @@ from waitress import serve
 import queue
 import argparse
 import sys
+import socket
 
 # default port if none provided via CLI
 PORT = 2004
+
+def get_local_ip():
+    """Get the local IP address of the machine."""
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))  # doesn't actually send data
+        local_ip = s.getsockname()[0]
+        s.close()
+        return local_ip
+    except Exception:
+        return "localhost"
 
 app = Flask(__name__, static_folder="public", static_url_path="")
 
@@ -49,6 +61,13 @@ def get_messages():
     finally:
         clients.remove(q) # clean up client queue on disconnect
 
+@app.route("/api/room/details", methods=["GET"])
+def get_room_details():
+    return {
+        "serverIP": get_local_ip(),
+        "port": PORT,
+    }, 200
+
 def send_new_user_message(username):
     welcome_message = f'{{"type": "system", "content": "Now entering room: {username}"}}'
     for q in clients[:]:
@@ -67,15 +86,7 @@ if __name__ == "__main__":
 
     port = args.port or PORT
 
-    # get local IP address
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    try:
-        s.connect(("8.8.8.8", 80))  # doesn't actually send data
-        local_ip = s.getsockname()[0]
-    except Exception:
-        local_ip = "localhost"
-    finally:
-        s.close()
+    local_ip = get_local_ip()
 
     print(f"\nServer running!")
     print(f" → Local:   http://127.0.0.1:{port}")
