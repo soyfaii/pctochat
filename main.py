@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, request, send_from_directory
 from waitress import serve
 import queue
@@ -29,20 +30,22 @@ clients = []
 def static_files(filename="index.html"):
     if 'u' in request.args:
         username = request.args.get('u')
-        print(f"User connected with username: {username}")
+        log(f"{request.remote_addr} connected with username: {username}")
         send_new_user_message(username)
         return send_from_directory("public", filename)
     else:
-        print("User connected with no username")
+        log(f"{request.remote_addr} connected with no username; redirecting to login page")
         return send_from_directory("public", filename if filename != "index.html" else "login.html")
 
 # POST: receives a message from one client and forwards it to all other connections
 @app.route("/api/messages", methods=["POST"])
 def post_message():
     payload = request.get_data(as_text=True)
+    log(f"Message received by {request.remote_addr}: {payload}")
     for q in clients[:]:
         try:
-            q.put(payload)
+            q.put(payload) 
+            log(f"Message from {request.remote_addr} forwarded to {q.qsize()} listener(s)")
         except:
             clients.remove(q)
     return '', 204
@@ -63,6 +66,7 @@ def get_messages():
 
 @app.route("/api/room/details", methods=["GET"])
 def get_room_details():
+    log(f"Room details requested by {request.remote_addr}")
     return {
         "serverIP": get_local_ip(),
         "port": PORT,
@@ -75,6 +79,10 @@ def send_new_user_message(username):
             q.put(welcome_message)
         except:
             clients.remove(q)
+
+def log(msg):
+    timestamp = "[{:%Y-%m-%d %H:%M:%S}]".format(datetime.now())
+    print(f"{timestamp}: {msg}")
 
 if __name__ == "__main__":
     import socket
@@ -93,7 +101,7 @@ if __name__ == "__main__":
     print(f" → Network: http://{local_ip}:{port}\n")
 
     if not (1 <= port <= 65535):
-        print(f"Error: port {port} is out of range (1-65535)")
+        log(f"Error: port {port} is out of range (1-65535)")
         sys.exit(2)
     
     open_browser = not args.server
