@@ -110,4 +110,4 @@ if __name__ == "__main__":
         import webbrowser
         webbrowser.open(f"http://{local_ip}:{port}")
 
-    serve(app, host="0.0.0.0", port=port)
+    serve(app, host="0.0.0.0", port=port, threads=8)
