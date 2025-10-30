@@ -9,6 +9,8 @@ import socket
 # default port if none provided via CLI
 PORT = 2004
 
+custom_address = None
+
 def get_local_ip():
     """Get the local IP address of the machine."""
     try:
@@ -68,7 +70,7 @@ def get_messages():
 def get_room_details():
     log(f"Room details requested by {request.remote_addr}")
     return {
-        "serverIP": get_local_ip(),
+        "serverIP": custom_address or get_local_ip(),
         "port": PORT,
     }, 200
 
@@ -91,11 +93,13 @@ if __name__ == "__main__":
     parser.add_argument("--port", "-p", type=int, help="port to listen on (default: %(default)s)", default=PORT)
     parser.add_argument("--server", "-s", action="store_true", help="run server in headless mode without opening a browser")
     parser.add_argument("--threads", "-t", type=int, help="number of threads to use (default: %(default)s)", default=8)
+    parser.add_argument("--address", "-a", type=str, help="address displayed to users in browser", default="0.0.0.0")
     args = parser.parse_args()
 
     port = args.port or PORT
     open_browser = not args.server
     threads = args.threads
+    custom_address = args.address
 
     local_ip = get_local_ip()
 
