@@ -1,4 +1,6 @@
-# pctochat
+<h1>
+  <img src="public/favicon.ico" height="18"> pctochat
+</h1>
 
 yet another browser-based pictochat clone that works on lan
 
