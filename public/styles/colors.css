@@ -3,12 +3,205 @@
   --bg-color: #f2f2f2;
   --light-border-color: #d9d9d9;
   --dark-border-color: #bfbfbf;
-  --default-blue: #2db9ec;
-  --light-default-blue: #d0effb;
-  --selected-light-default-blue: #a6e1f9;
-  --dark-default-blue: #08475e;
+
+  --slate: #61829a;
+  --light-slate: #d9d9d9;
+  --selected-light-slate: #f2f2f2;
+  --dark-slate: #3f3f3f;
+
+  --brown: #ba4900;
+  --light-brown: #eed3aa;
+  --selected-light-brown: #f6e9d9;
+  --dark-brown: #803500;
+  
+  --red: #fb0019;
+  --light-red: #ffcccc;
+  --selected-light-red: #ff9999;
+  --dark-red: #800000;
+
+  --pink: #fb8afb;
+  --light-pink: #ffccff;
+  --selected-light-pink: #ff99ff;
+  --dark-pink: #800040;
+  
+  --orange: #fb9200;
+  --light-orange: #f6eed9;
+  --selected-light-orange: #f6efd9;
+  --dark-orange: #a36700;
+
+  --yellow: #f3e300;
+  --light-yellow: #ffffd0;
+  --selected-light-yellow: #f2f6d9;
+  --dark-yellow: #766c00;
+
+  --lime: #aafb00;
+  --light-lime: #f2f6d9;
+  --selected-light-lime: #e6f2c6;
+  --dark-lime: #7c9d00;
+
+  --radioactive: #03fb03;
+  --light-radioactive: #c1edc1;
+  --selected-light-radioactive: #93e093;
+  --dark-radioactive: #008b00;
+
+  --green: #05a137;
+  --light-green: #c6f6d9;
+  --selected-light-green: #a6f3c6;
+  --dark-green: #008c4d;
+
+  --emerald: #49db8a;
+  --light-emerald: #c6f6d9;
+  --selected-light-emerald: #a6f3c6;
+  --dark-emerald: #008c4d;
+    
+  --cyan: #2db9ec;
+  --light-cyan: #d0effb;
+  --selected-light-cyan: #a6e1f9;
+  --dark-cyan: #08475e;
+
+  --blue: #0059f3;
+  --light-blue: #c6e6ff;
+  --selected-light-blue: #99ccff;
+  --dark-blue: #0033cc;
+
+  --navy: #000092;
+  --light-navy: #c6c6ff;
+  --selected-light-navy: #9999ff;
+  --dark-navy: #000066;
+
+  --purple: #8a01d3;
+  --light-purple: #e6ccff;
+  --selected-light-purple: #c9a6ff;
+  --dark-purple: #4d0080;
+
+  --magenta: #d300eb;
+  --light-magenta: #ffccff;
+  --selected-light-magenta: #ff99ff;
+  --dark-magenta: #800080;
+
+  --fuchsia: #fb0092;
+  --light-fuchsia: #ffccff;
+  --selected-light-fuchsia: #ff99ff;
+  --dark-fuchsia: #800040;
+
+  --accent: var(--cyan);
+  --light-accent: var(--light-cyan);
+  --selected-light-accent: var(--selected-light-cyan);
+  --dark-accent: var(--dark-cyan);
 
   @media (prefers-color-scheme: dark) {
     --page-bg-color: #121212;
   }
+}
+
+.accent-slate {
+  --accent: var(--slate);
+  --light-accent: var(--light-slate);
+  --selected-light-accent: var(--selected-light-slate);
+  --dark-accent: var(--dark-slate);
+}
+
+.accent-brown {
+  --accent: var(--brown);
+  --light-accent: var(--light-brown);
+  --selected-light-accent: var(--selected-light-brown);
+  --dark-accent: var(--dark-brown);
+}
+
+.accent-red {
+  --accent: var(--red);
+  --light-accent: var(--light-red);
+  --selected-light-accent: var(--selected-light-red);
+  --dark-accent: var(--dark-red);
+}
+
+.accent-pink {
+  --accent: var(--pink);
+  --light-accent: var(--light-pink);
+  --selected-light-accent: var(--selected-light-pink);
+  --dark-accent: var(--dark-pink);
+}
+
+.accent-orange {
+  --accent: var(--orange);
+  --light-accent: var(--light-orange);
+  --selected-light-accent: var(--selected-light-orange);
+  --dark-accent: var(--dark-orange);
+}
+
+.accent-yellow {
+  --accent: var(--yellow);
+  --light-accent: var(--light-yellow);
+  --selected-light-accent: var(--selected-light-yellow);
+  --dark-accent: var(--dark-yellow);
+}
+
+.accent-lime {
+  --accent: var(--lime);
+  --light-accent: var(--light-lime);
+  --selected-light-accent: var(--selected-light-lime);
+  --dark-accent: var(--dark-lime);
+}
+
+.accent-radioactive {
+  --accent: var(--radioactive);
+  --light-accent: var(--light-radioactive);
+  --selected-light-accent: var(--selected-light-radioactive);
+  --dark-accent: var(--dark-radioactive);
+}
+
+.accent-green {
+  --accent: var(--green);
+  --light-accent: var(--light-green);
+  --selected-light-accent: var(--selected-light-green);
+  --dark-accent: var(--dark-green);
+}
+
+.accent-emerald {
+  --accent: var(--emerald);
+  --light-accent: var(--light-emerald);
+  --selected-light-accent: var(--selected-light-emerald);
+  --dark-accent: var(--dark-emerald);
+}
+
+.accent-cyan {
+  --accent: var(--cyan);
+  --light-accent: var(--light-cyan);
+  --selected-light-accent: var(--selected-light-cyan);
+  --dark-accent: var(--dark-cyan);
+}
+
+.accent-blue {
+  --accent: var(--blue);
+  --light-accent: var(--light-blue);
+  --selected-light-accent: var(--selected-light-blue);
+  --dark-accent: var(--dark-blue);
+}
+
+.accent-navy {
+  --accent: var(--navy);
+  --light-accent: var(--light-navy);
+  --selected-light-accent: var(--selected-light-navy);
+  --dark-accent: var(--dark-navy);
+}
+
+.accent-purple {
+  --accent: var(--purple);
+  --light-accent: var(--light-purple);
+  --selected-light-accent: var(--selected-light-purple);
+  --dark-accent: var(--dark-purple);
+}
+
+.accent-magenta {
+  --accent: var(--magenta);
+  --light-accent: var(--light-magenta);
+  --selected-light-accent: var(--selected-light-magenta);
+  --dark-accent: var(--dark-magenta);
+}
+
+.accent-fuchsia {
+  --accent: var(--fuchsia);
+  --light-accent: var(--light-fuchsia);
+  --selected-light-accent: var(--selected-light-fuchsia);
+  --dark-accent: var(--dark-fuchsia);
 }

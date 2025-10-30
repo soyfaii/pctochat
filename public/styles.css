@@ -96,12 +96,12 @@ button:active {
 }
 
 button.active-tool {
-  background-color: var(--light-default-blue);
-  border: 1px solid var(--default-blue);
+  background-color: var(--light-accent);
+  border: 1px solid var(--accent);
 }
 
 button.active-tool:active {
-  background-color: var(--selected-light-default-blue);
+  background-color: var(--selected-light-accent);
 }
 
 #user-message-form {
@@ -153,7 +153,7 @@ hr {
   width: 216px;
   height: 100px;
   background-color: white;
-  border: 1px solid var(--default-blue);
+  border: 1px solid var(--accent);
   display: flex;
   flex-direction: column;
 }
@@ -166,9 +166,9 @@ hr {
   box-sizing: border-box;
   width: 100%;
   height: 20px;
-  background-color: var(--light-default-blue);
-  border-bottom: 1px solid var(--default-blue);
-  color: var(--dark-default-blue);
+  background-color: var(--light-accent);
+  border-bottom: 1px solid var(--accent);
+  color: var(--dark-accent);
   padding: 6px 8px;
 }
 

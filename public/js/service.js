@@ -11,6 +11,7 @@ function send() {
     from: username,
     text: messageText,
     doodle: data,
+    color: userColor,
     timestamp: new Date().toISOString(),
   };
   fetch("/api/messages", {
@@ -30,6 +31,9 @@ function addToChatLog(msg) {
 
   const messageBox = document.createElement("div");
   messageBox.className = "message-box";
+
+  const addedClass = `accent-${msg.color}`;
+  messageBox.classList.add(addedClass);
 
   const messageHeader = document.createElement("div");
   messageHeader.className = "message-header";
